@@ -1,3 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Canvas {
+
+    List<Point> points;
+
+    public Canvas(){
+        points = new ArrayList<>();
+    }
+
+    public Canvas(List<Point> points) {
+        this.points = points;
+    }
+
+    public void drawAllPoints() {
+        for(Point point : points) {
+            point.draw();
+        }
+    }
+
+    public void addPoint(Point point) {
+        this.points.add(point);
+    }
+
+    public void deletePoint(Point point) {
+        this.points.remove(point);
+    }
+
+    public void moveAllPoints(char x, char y) {
+        for(Point point : points) {
+            point.move(x, y);
+        }
+    }
+
+}
+
+
 class Point {
 	String id
 	double x,y;
